@@ -37,9 +37,9 @@ install-service: install
 	echo "[Install]" >> $(USER_SERVICE_DIR)/$(USER_SERVICE_FILE)
 	echo "WantedBy=default.target" >> $(USER_SERVICE_DIR)/$(USER_SERVICE_FILE)
 	systemctl --user daemon-reload
-	@echo "✅ Service created. Enable/start with:"
-	@echo "  systemctl --user enable custom-keybind.service"
-	@echo "  systemctl --user start custom-keybind.service"
+	systemctl --user enable custom-keybind.service
+	systemctl --user start custom-keybind.service
+	@echo "✅ Service créé, activé et démarré automatiquement !"
 
 uninstall:
 	@echo "🗑️  Uninstalling $(TARGET)..."
